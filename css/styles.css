@@ -1,0 +1,48 @@
+body {
+    font-family: "comic sans ms", sans-serif;
+    text-align: center;
+    background: linear-gradient(lightskyblue, crimson);
+    line-height: 1.6;
+    margin: 20px;
+}
+
+h2 {
+    background: -webkit-linear-gradient(rgb(12, 16, 241), rgb(212, 4, 4));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 100px;
+}
+
+h3 {
+    color: #555;
+    font-size: 35px;
+    font-family: "Rubik Doodle Shadow", Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 1px 1px 2px black;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-shadow: 1px 1px 2px black;
+}
+
+.parts {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.pic {
+    margin: 30px;
+    border-radius: 10px;
+}
+
+#farewell {
+    background-size: cover;
+    width: 1200px;
+    margin: 100px 0 0 0 ;
+}
+
+.smallpic {
+    width: 300px;
+}
