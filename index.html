@@ -1,77 +1,443 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Unlocking Your Potential: The Power of Visualization</title>
-        <link rel="stylesheet" href="css/styles.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlocking Your Potential: The Power of Visualization</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <body>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
-        <h2>Unlocking Your Potential: The Power of Visualization</h2>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+        }
 
-        <div class="parts">
-            <img class="pic" src="images/astro.jpg" width="200px">
-            <div>
-                <h3>Introduction:</h3>
-                <p>
-                    Have you ever found yourself in a rut or unsatisfied with the trajectory of your life? Maybe you've been on a quest to instigate significant changes and unlock your complete potential. In this blog post, we will delve into the profound impact of visualization and how it has the potential to bring about instant transformations in both your personal life and the world surrounding you.
-                </p>
+        .hero-title {
+            font-family: 'Rubik Doodle Shadow', cursive;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, #fff, #f8f9fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .content-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+        }
+
+        .content-card:hover::before {
+            left: 100%;
+        }
+
+        .section-flex {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-flex.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .section-content {
+            flex: 1;
+        }
+
+        .section-image {
+            flex: 0 0 300px;
+            position: relative;
+        }
+
+        .pic {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            filter: brightness(0.9) contrast(1.1);
+        }
+
+        .pic:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .smallpic {
+            height: 200px;
+        }
+
+        .section-image::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, #667eea, #764ba2, #667eea);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .section-image:hover::after {
+            opacity: 0.3;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            position: relative;
+            display: inline-block;
+        }
+
+        h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .content-card:hover h3::after {
+            width: 100%;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #34495e;
+            text-align: justify;
+            margin-bottom: 1rem;
+        }
+
+        .intro-section {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            border-left: 5px solid #667eea;
+        }
+
+        .goal-section {
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(52, 152, 219, 0.1));
+            border-left: 5px solid #2ecc71;
+        }
+
+        .intention-section {
+            background: linear-gradient(135deg, rgba(230, 126, 34, 0.1), rgba(231, 76, 60, 0.1));
+            border-left: 5px solid #e67e22;
+        }
+
+        .conclusion-section {
+            background: linear-gradient(135deg, rgba(155, 89, 182, 0.1), rgba(52, 73, 94, 0.1));
+            border-left: 5px solid #9b59b6;
+            text-align: center;
+        }
+
+        #farewell {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin: 2rem auto;
+            display: block;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        #farewell:hover {
+            transform: scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            animation: float-random 8s infinite ease-in-out;
+        }
+
+        .circle1 {
+            width: 60px;
+            height: 60px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .circle2 {
+            width: 80px;
+            height: 80px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .circle3 {
+            width: 40px;
+            height: 40px;
+            top: 80%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float-random {
+            0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.3; }
+            25% { transform: translateY(-20px) translateX(10px); opacity: 0.6; }
+            50% { transform: translateY(-10px) translateX(-15px); opacity: 0.4; }
+            75% { transform: translateY(-30px) translateX(5px); opacity: 0.7; }
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .section-flex {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .section-flex.reverse {
+                flex-direction: column;
+            }
+
+            .section-image {
+                flex: none;
+                width: 100%;
+            }
+
+            .content-card {
+                padding: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="floating-elements">
+        <div class="floating-circle circle1"></div>
+        <div class="floating-circle circle2"></div>
+        <div class="floating-circle circle3"></div>
+    </div>
+
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="container">
+        <h2 class="hero-title">Unlocking Your Potential: The Power of Visualization</h2>
+
+        <div class="content-card intro-section fade-in">
+            <div class="section-flex">
+                <div class="section-image">
+                    <img class="pic" src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=400&h=300&fit=crop" alt="Astronaut reaching for stars" width="300">
+                </div>
+                <div class="section-content">
+                    <h3>Introduction</h3>
+                    <p>
+                        Have you ever found yourself in a rut or unsatisfied with the trajectory of your life? Maybe you've been on a quest to instigate significant changes and unlock your complete potential. In this blog post, we will delve into the profound impact of visualization and how it has the potential to bring about instant transformations in both your personal life and the world surrounding you.
+                    </p>
+                </div>
             </div>
         </div>
-    
-        <h3>The Impact of Visualization</h3>
-        <p>
-            Visualization extends beyond merely envisioning a desired outcome; it involves truly feeling and immersing yourself in the reality you aim to bring into existence. When you synchronize your internal thoughts and emotions with your external actions, you gain the capacity to mold the outcomes in your life. This principle has been consistently validated, as numerous success stories attribute their accomplishments to the transformative influence of visualization.
-        </p>
 
-        <div class="parts">
-            <div>
-                <h3>Goal Setting and Visualization</h3>
-                <p>
-                    A highly effective application of visualization is when combined with goal setting. By envisioning the life you desire and concentrating on the future instead of fixating on past errors or existing obstacles, you can condition your mind for success. Employing goal visualization and positive reinforcement serves as a pathway to actualizing your envisioned reality.
-                </p>
-            </div>
-            <img class="pic smallpic" src="images/meditating.jpg" width="200px">
+        <div class="content-card fade-in">
+            <h3>The Impact of Visualization</h3>
+            <p>
+                Visualization extends beyond merely envisioning a desired outcome; it involves truly feeling and immersing yourself in the reality you aim to bring into existence. When you synchronize your internal thoughts and emotions with your external actions, you gain the capacity to mold the outcomes in your life. This principle has been consistently validated, as numerous success stories attribute their accomplishments to the transformative influence of visualization.
+            </p>
         </div>
 
-        <h3>The Process of Visualization</h3>
-        <p>
-            It's essential to emphasize that visualization goes beyond focusing solely on the ultimate objective; it involves envisioning the entire journey, encompassing the small actions that align with your broader goals. This habit empowers your subconscious to identify opportunities and steer you in the direction of realizing your aspirations as you progress towards achievement.
-        </p>
-
-        <div class="parts">
-            <img class="pic smallpic" src="images/a_new_horizon.jpg" width="200px">
-            <div>
-                <h3>Harnessing Intention for Success</h3>
-                <p>
-                    Acknowledging both internal and external intentions is crucial in the pursuit of your goals. Internal intentions center on personal resolve, adaptability, and confidence in your capacity to succeed. Conversely, external intentions encompass a profound belief in attaining your goals and embracing visualization to transform them into reality.
-                </p>
+        <div class="content-card goal-section fade-in">
+            <div class="section-flex reverse">
+                <div class="section-image">
+                    <img class="pic smallpic" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=250&fit=crop" alt="Person meditating in nature" width="300">
+                </div>
+                <div class="section-content">
+                    <h3>Goal Setting and Visualization</h3>
+                    <p>
+                        A highly effective application of visualization is when combined with goal setting. By envisioning the life you desire and concentrating on the future instead of fixating on past errors or existing obstacles, you can condition your mind for success. Employing goal visualization and positive reinforcement serves as a pathway to actualizing your envisioned reality.
+                    </p>
+                </div>
             </div>
         </div>
 
-        <h3>Embodying Your Ideal Self</h3>
-        <p>
-            Utilizing visualization as a potent tool for personal transformation is another valuable aspect. When you imagine and embody the characteristics of your ideal self, you establish a clear path for personal development. This includes visualizing optimal habits, fashion choices, and daily routines, as these elements also play a vital role in bringing your goals to fruition.
-        </p>
-
-        <h3>The Transformation Journey</h3>
-        <p>
-            The process of transformation doesn't occur overnight; it involves gradually adopting new habits, thoughts, and behaviors over time. Through making small changes and consistently embodying the roles and qualities of your ideal self, you start to observe a notable shift in your reality and your responses to challenges.
-        </p>
-
-        <h3>Conclusion:</h3>
-        <p>
-            By leveraging the potency of visualization and intention, you have the ability to unlock your complete potential and instigate significant, enduring change in your life. Embrace this transformative practice, and observe the immediate shifts that occur when aligning your vision with your actions.
-        </p>
-        
-        <div>
-            <img id="farewell" src="images/farewell.jpg">
+        <div class="content-card fade-in">
+            <h3>The Process of Visualization</h3>
+            <p>
+                It's essential to emphasize that visualization goes beyond focusing solely on the ultimate objective; it involves envisioning the entire journey, encompassing the small actions that align with your broader goals. This habit empowers your subconscious to identify opportunities and steer you in the direction of realizing your aspirations as you progress towards achievement.
+            </p>
         </div>
 
-    </body>
+        <div class="content-card intention-section fade-in">
+            <div class="section-flex">
+                <div class="section-image">
+                    <img class="pic smallpic" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=250&fit=crop" alt="New horizon landscape" width="300">
+                </div>
+                <div class="section-content">
+                    <h3>Harnessing Intention for Success</h3>
+                    <p>
+                        Acknowledging both internal and external intentions is crucial in the pursuit of your goals. Internal intentions center on personal resolve, adaptability, and confidence in your capacity to succeed. Conversely, external intentions encompass a profound belief in attaining your goals and embracing visualization to transform them into reality.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card fade-in">
+            <h3>Embodying Your Ideal Self</h3>
+            <p>
+                Utilizing visualization as a potent tool for personal transformation is another valuable aspect. When you imagine and embody the characteristics of your ideal self, you establish a clear path for personal development. This includes visualizing optimal habits, fashion choices, and daily routines, as these elements also play a vital role in bringing your goals to fruition.
+            </p>
+        </div>
+
+        <div class="content-card fade-in">
+            <h3>The Transformation Journey</h3>
+            <p>
+                The process of transformation doesn't occur overnight; it involves gradually adopting new habits, thoughts, and behaviors over time. Through making small changes and consistently embodying the roles and qualities of your ideal self, you start to observe a notable shift in your reality and your responses to challenges.
+            </p>
+        </div>
+
+        <div class="content-card conclusion-section fade-in">
+            <h3>Conclusion</h3>
+            <p>
+                By leveraging the potency of visualization and intention, you have the ability to unlock your complete potential and instigate significant, enduring change in your life. Embrace this transformative practice, and observe the immediate shifts that occur when aligning your vision with your actions.
+            </p>
+            
+            <div>
+                <img id="farewell" src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=600&h=300&fit=crop" alt="Inspiring sunset landscape">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Progress bar functionality
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0.2s';
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.content-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Smooth scrolling for better UX
+        document.documentElement.style.scrollBehavior = 'smooth';
+    </script>
+</body>
 </html>
